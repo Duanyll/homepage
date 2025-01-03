@@ -489,6 +489,8 @@ export function cleanServiceGroups(groups) {
 
           // proxmox
           node,
+          enableNodes,
+          enableVms,
 
           // speedtest
           bitratePrecision,
@@ -564,6 +566,8 @@ export function cleanServiceGroups(groups) {
         }
         if (type === "proxmox") {
           if (node) widget.node = node;
+          if (enableNodes) widget.enableNodes = true;
+          if (enableVms) widget.enableVms = true;
         }
         if (type === "kubernetes") {
           if (namespace) widget.namespace = namespace;
